@@ -1,9 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App";
+import { NavBar } from "../common";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+ReactDOM.render(
+  <Router>
+    <NavBar
+      navItems={[
+        { name: "Home", path: "/" },
+        { name: "About", path: "/about" },
+      ]}
+    />
     <App />
-  </StrictMode>,
-)
+  </Router>,
+  document.getElementById("root")
+);
