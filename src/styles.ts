@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const PageContainer = styled.div`
-  padding-left: 25rem; 
-
+  padding-left: 2rem;
 `;
-export {PageContainer}
+export { PageContainer };

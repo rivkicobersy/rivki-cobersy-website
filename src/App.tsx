@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { PageContainer } from "./styles";
-
-const Home = () => <div>Home Page</div>;
-const About = () => <div>About Page</div>;
+import { About, Home } from "./modules";
 
 const App = () => {
   return (

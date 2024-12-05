@@ -1,6 +1,6 @@
+import { IoMenu } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
 
 const NavList = styled.ul`
   list-style: none;
@@ -9,75 +9,40 @@ const NavList = styled.ul`
   flex-grow: 1;
 `;
 
- const Nav = styled.nav`
+const Nav = styled.nav<{ isOpen: boolean }>`
   height: 100%;
-  width: 2rem; /* Initially narrow */
+  width: ${(props) => (props.isOpen ? "200px" : "2rem")};
   position: fixed;
   top: 0;
   left: 0;
   background-color: grey;
   display: flex;
   flex-direction: column;
-  transition: width 0.3s ease; 
+  transition: width 0.3s ease;
   padding-top: 20px;
-  
-  &:hover {
-    width: 200px;  /* Expand on hover */
-  }
+  cursor: pointer;
 
-  /* Show NavList when expanded */
-  &:hover ${NavList} {
-    display: block;
-  }
-
-  /* Initially hide NavList when collapsed */
   ${NavList} {
-    display: none;
+    display: ${(props) => (props.isOpen ? "block" : "none")};
     padding: 0;
     margin: 0;
     list-style: none;
   }
 `;
 
-
- const HamburgerMenuContainer = styled.div`
+const HamburgerMenuContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-
-  /* Only show when collapsed */
-  ${Nav}:not(:hover) & {
-    display: block;
-  }
-
-  /* Hide when expanded */
-  ${Nav}:hover & {
-    display: none;
-  }
+  width: 100%;
+  cursor: pointer;
 `;
 
- const BrandContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+const HamburgerIcon = styled(IoMenu)`
+  transition: transform 0.3s ease;
+  font-size: 2rem;
+  cursor: pointer;
 `;
 
- const BrandLogo = styled.img`
-  width: 60px;
-  height: 60px;
-`;
-
- const BrandName = styled.span`
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-left: 10px;
-`;
-
-
-
- const NavItem = styled.li<{ selected: boolean }>`
+const NavItem = styled.li<{ selected: boolean }>`
   padding: 12px 20px;
   font-size: 18px;
   color: ${(props) => (props.selected ? "#fff" : "#333")};
@@ -90,16 +55,12 @@ const NavList = styled.ul`
   }
 `;
 
- 
 const LinkStyled = styled(Link)<{ selected: boolean }>`
   color: white;
   text-decoration: none;
   font-weight: ${({ selected }) => (selected ? "bold" : "normal")};
   padding: 5px 10px;
   display: block;
- 
 `;
-export {
-  Nav, NavItem, NavList, BrandContainer, BrandLogo, BrandName,
-  HamburgerMenuContainer, LinkStyled
-}
+
+export { HamburgerIcon, HamburgerMenuContainer, LinkStyled, Nav, NavItem, NavList };
