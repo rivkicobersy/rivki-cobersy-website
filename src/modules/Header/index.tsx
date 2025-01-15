@@ -1,25 +1,14 @@
-import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { HeaderWrapper, Logo } from "./styles";
 
 const Header = () => {
   return (
     <HeaderWrapper>
-      <Logo src="/logo.jpeg" alt="Rivki's Website" />
+      <Link to="/">
+        <Logo src="/logo.jpeg" alt="Rivki's Website" />
+      </Link>
     </HeaderWrapper>
   );
 };
 
 export default Header;
-
-// Styled Components
-
-const HeaderWrapper = styled.header`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-`;
-
-const Logo = styled.img`
-  max-height: 80%;
-  width: auto;
-`;

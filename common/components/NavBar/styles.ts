@@ -1,66 +1,49 @@
-import { IoMenu } from "react-icons/io5";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const NavList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-grow: 1;
-`;
-
 const Nav = styled.nav<{ isOpen: boolean }>`
-  height: 100%;
-  width: ${(props) => (props.isOpen ? "200px" : "2rem")};
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: grey;
   display: flex;
-  flex-direction: column;
-  transition: width 0.3s ease;
-  padding-top: 20px;
-  cursor: pointer;
-
-  ${NavList} {
-    display: ${(props) => (props.isOpen ? "block" : "none")};
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  position: sticky;
+  padding: 1rem;
+  border-top: 1px solid #b3b1b1;
+  border-bottom: 1px solid #b3b1b1;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 `;
 
-const HamburgerMenuContainer = styled.div`
+const NavList = styled.ul`
   display: flex;
-  width: 100%;
-  cursor: pointer;
-`;
-
-const HamburgerIcon = styled(IoMenu)`
-  transition: transform 0.3s ease;
-  font-size: 2rem;
-  cursor: pointer;
+  list-style-type: none;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-end;
+  gap: 2rem;
 `;
 
 const NavItem = styled.li<{ selected: boolean }>`
-  padding: 12px 20px;
-  font-size: 18px;
-  color: ${(props) => (props.selected ? "#fff" : "#333")};
-  background-color: ${(props) => (props.selected ? "#007bff" : "transparent")};
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: ${({ selected }) => (selected ? "#FEBADD" : "#333")};
   cursor: pointer;
-  transition: background-color 0.3s ease;
-
+  transition: color 0.3s ease, transform 0.3s ease;
   &:hover {
-    background-color: #f1f1f1;
+    color: #febadd;
+    transform: scale(1.1);
   }
 `;
 
-const LinkStyled = styled(Link)<{ selected: boolean }>`
-  color: white;
+const LinkStyled = styled.a<{ selected: boolean }>`
   text-decoration: none;
-  font-weight: ${({ selected }) => (selected ? "bold" : "normal")};
-  padding: 5px 10px;
-  display: block;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+
+  &:hover {
+    color: #febadd;
+  }
 `;
 
-export { HamburgerIcon, HamburgerMenuContainer, LinkStyled, Nav, NavItem, NavList };
+export { LinkStyled, Nav, NavItem, NavList };
