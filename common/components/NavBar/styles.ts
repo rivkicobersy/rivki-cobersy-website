@@ -7,6 +7,8 @@ const PageContainer = styled.div`
   justify-content: flex-start;
   background-color: white;
   width: 100%;
+  min-height: 30vh;
+  overflow-x: hidden;
 `;
 
 const HeaderWrapper = styled.header`
@@ -30,8 +32,9 @@ const Nav = styled.nav<{ isSticky: boolean }>`
   padding: 1rem;
   border-top: 1px solid #ffe4e4;
   border-bottom: 1px solid #ffe4e4;
-  z-index: 999;
-  transition: top 0.3s ease-in-out;
+  z-index: 1;
+  box-shadow: ${({ isSticky }) => (isSticky ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none")};
+  transition: box-shadow 0.3s ease;
 `;
 
 const NavList = styled.ul`

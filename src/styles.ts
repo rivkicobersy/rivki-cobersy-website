@@ -6,17 +6,14 @@ const PageContainer = styled.div`
 `;
 
 const Section = styled.section`
-  height: 100vh;
+  height: ${(props) => (props.id === "" ? "calc(100vh - 280px)" : "100vh")};
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-
   background-color: ${(props) => {
     switch (props.id) {
-      case "":
-        return "lightblue";
       case "about":
         return "lightcoral";
       case "portfolio":
@@ -28,4 +25,5 @@ const Section = styled.section`
     }
   }};
 `;
+
 export { PageContainer, Section };

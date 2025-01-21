@@ -9,6 +9,7 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
   const [isSticky, setIsSticky] = useState(false);
+  const [showLogo, setShowLogo] = useState(true);
   const navigate = useNavigate();
 
   const scrollToHome = () => {
@@ -29,18 +30,21 @@ const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
   };
 
   const handleScroll = () => {
-    const navbarHeight = 150;
+    const navbarHeight = 155;
     const currentScrollPosition = window.scrollY;
 
     if (currentScrollPosition >= navbarHeight) {
       setIsSticky(true);
+      setShowLogo(false);
     } else {
       setIsSticky(false);
+      setShowLogo(true);
     }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -48,9 +52,7 @@ const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
 
   return (
     <PageContainer>
-      <HeaderWrapper>
-        <Logo src="/logo.png" alt="Website Logo" onClick={scrollToHome} />
-      </HeaderWrapper>
+      <HeaderWrapper>{showLogo && <Logo src="/logo.png" alt="Website Logo" onClick={scrollToHome} />}</HeaderWrapper>
       <Nav isSticky={isSticky}>
         <NavList>
           {navItems.map((item) => (

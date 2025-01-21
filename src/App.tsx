@@ -49,7 +49,7 @@ const App = () => {
         ]}
         activeSection={activeSection}
       />
-      <PageContainer>
+      <PageContainer style={{ scrollBehavior: "smooth" }}>
         <Section id="">
           <Home />
         </Section>
