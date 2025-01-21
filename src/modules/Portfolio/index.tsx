@@ -1,6 +1,6 @@
 import { Image, ImageWrapper, Text } from "./styles";
 
-const About = () => (
+const Portfolio = () => (
   <div>
     <ImageWrapper>
       <Image src="/me.jpeg" alt="Profile pic" />
@@ -12,4 +12,4 @@ const About = () => (
   </div>
 );
 
-export default About;
+export default Portfolio;
