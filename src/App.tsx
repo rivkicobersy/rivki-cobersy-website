@@ -39,7 +39,7 @@ const App = () => {
   }, [activeSection]);
 
   return (
-    <PageContainer>
+    <div>
       <NavBar
         navItems={[
           { name: "Home", path: "" },
@@ -49,23 +49,22 @@ const App = () => {
         ]}
         activeSection={activeSection}
       />
-
-      <Section id="">
-        <Home />
-      </Section>
-      <Section id="about">
-        <About />
-      </Section>
-      <Section id="portfolio">
-        <Portfolio />
-      </Section>
-      <Section id="contact">
-        <Contact />
-      </Section>
-    </PageContainer>
+      <PageContainer>
+        <Section id="">
+          <Home />
+        </Section>
+        <Section id="about">
+          <About />
+        </Section>
+        <Section id="portfolio">
+          <Portfolio />
+        </Section>
+        <Section id="contact">
+          <Contact />
+        </Section>
+      </PageContainer>
+    </div>
   );
 };
 
 export default App;
-
-//TODO add a resources page

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { HeaderWrapper, LinkStyled, Logo, Nav, NavItem, NavList, PageContainer } from "./styles";
 import { useNavigate } from "react-router-dom";
 
@@ -8,6 +8,7 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
+  const [isSticky, setIsSticky] = useState(false);
   const navigate = useNavigate();
 
   const scrollToHome = () => {
@@ -27,12 +28,30 @@ const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
     }
   };
 
+  const handleScroll = () => {
+    const navbarHeight = 150;
+    const currentScrollPosition = window.scrollY;
+
+    if (currentScrollPosition >= navbarHeight) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <PageContainer>
       <HeaderWrapper>
         <Logo src="/logo.png" alt="Website Logo" onClick={scrollToHome} />
       </HeaderWrapper>
-      <Nav>
+      <Nav isSticky={isSticky}>
         <NavList>
           {navItems.map((item) => (
             <NavItem key={item.path} selected={activeSection === item.path}>

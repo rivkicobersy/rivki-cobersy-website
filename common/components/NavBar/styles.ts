@@ -7,9 +7,6 @@ const PageContainer = styled.div`
   justify-content: flex-start;
   background-color: white;
   width: 100%;
-  padding-left: 8rem;
-  padding-right: 8rem;
-  box-sizing: border-box;
 `;
 
 const HeaderWrapper = styled.header`
@@ -17,24 +14,24 @@ const HeaderWrapper = styled.header`
   justify-content: center;
   align-items: center;
   height: 150px;
-  position: fixed;
   width: 100%;
-  top: 0;
   background-color: white;
+  position: relative;
 `;
 
-const Nav = styled.nav`
+const Nav = styled.nav<{ isSticky: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  position: fixed;
-  top: 150px;
+  position: ${({ isSticky }) => (isSticky ? "fixed" : "relative")};
+  top: ${({ isSticky }) => (isSticky ? "0" : "initial")};
   width: 100%;
   padding: 1rem;
   border-top: 1px solid #ffe4e4;
   border-bottom: 1px solid #ffe4e4;
   z-index: 999;
+  transition: top 0.3s ease-in-out;
 `;
 
 const NavList = styled.ul`
