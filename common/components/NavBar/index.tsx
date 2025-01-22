@@ -52,7 +52,7 @@ const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
 
   return (
     <PageContainer>
-      <HeaderWrapper>{showLogo && <Logo src="/logo.png" alt="Website Logo" onClick={scrollToHome} />}</HeaderWrapper>
+      <HeaderWrapper>{showLogo && <Logo src="/logo.png" alt="Website Logo" />}</HeaderWrapper>
       <Nav isSticky={isSticky}>
         <NavList>
           {navItems.map((item) => (

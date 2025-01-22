@@ -4,7 +4,7 @@ const Home = () => (
   <Container>
     <div>
       <img
-        src="/girl.gif"
+        src="/coding.gif"
         alt="A fun animation"
         style={{
           top: 0,
