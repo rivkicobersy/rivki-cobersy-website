@@ -8,7 +8,7 @@ const Home = () => (
         alt="A fun animation"
         style={{
           top: 0,
-          height: "520px",
+          height: "220px",
         }}
       />
     </div>

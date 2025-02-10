@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HeaderWrapper, LinkStyled, Logo, Nav, NavItem, NavList, PageContainer } from "./styles";
+import { HeaderWrapper, LinkStyled, Logo, Nav, NavItem, NavList, PageContainer, HamburgerButton } from "./styles";
 import { useNavigate } from "react-router-dom";
 
 interface NavBarProps {
@@ -10,6 +10,7 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
   const [isSticky, setIsSticky] = useState(false);
   const [showLogo, setShowLogo] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const scrollToHome = () => {
@@ -27,6 +28,9 @@ const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
       }
       navigate(`/${path}`);
     }
+    if (window.innerWidth <= 768) {
+      setIsMobileMenuOpen(false);
+    }
   };
 
   const handleScroll = () => {
@@ -42,6 +46,10 @@ const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
     }
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -54,7 +62,12 @@ const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
     <PageContainer>
       <HeaderWrapper>{showLogo && <Logo src="/logo.png" alt="Website Logo" />}</HeaderWrapper>
       <Nav isSticky={isSticky}>
-        <NavList>
+        <HamburgerButton onClick={toggleMobileMenu}>
+          <div />
+          <div />
+          <div />
+        </HamburgerButton>
+        <NavList isMobileMenuOpen={isMobileMenuOpen}>
           {navItems.map((item) => (
             <NavItem key={item.path} selected={activeSection === item.path}>
               <LinkStyled
