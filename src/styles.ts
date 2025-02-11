@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const PageContainer = styled.div`
-  padding-left: 8rem;
-  padding-right: 8rem;
+  padding-left: 10%;
+  padding-right: 10%;
 `;
 
 const Section = styled.section`

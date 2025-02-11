@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { HeaderWrapper, LinkStyled, Logo, Nav, NavItem, NavList, PageContainer, HamburgerButton } from "./styles";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { HamburgerButton, HeaderWrapper, LinkStyled, Logo, Nav, NavItem, NavList, PageContainer } from "./styles";
 
 interface NavBarProps {
   navItems: { name: string; path: string }[];
@@ -59,7 +59,7 @@ const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
   }, []);
 
   return (
-    <PageContainer>
+    <PageContainer isSticky={isSticky}>
       <HeaderWrapper>{showLogo && <Logo src="/logo.png" alt="Website Logo" />}</HeaderWrapper>
       <Nav isSticky={isSticky}>
         <HamburgerButton onClick={toggleMobileMenu}>

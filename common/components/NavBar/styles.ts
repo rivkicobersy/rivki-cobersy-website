@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
-const PageContainer = styled.div`
+const PageContainer = styled.div<{ isSticky: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   background-color: white;
   width: 100%;
+  padding-top: ${({ isSticky }) => (isSticky ? "100px" : "0")};
+
+  @media (max-width: 768px) {
+    padding-top: ${({ isSticky }) => (isSticky ? "66px" : "0")};
+  }
 `;
 
 const HeaderWrapper = styled.header`

@@ -1,17 +1,11 @@
-import { Contact, Container, Icon, Image, ImageWrapper, RightSide, Text, WelcomeText } from "./styles";
+import { Contact, Container, Gif, GifWrapper, Icon, Image, ImageWrapper, RightSide, Text, WelcomeText } from "./styles";
 
 const Home = () => (
   <Container>
-    <div>
-      <img
-        src="/coding.gif"
-        alt="A fun animation"
-        style={{
-          top: 0,
-          height: "220px",
-        }}
-      />
-    </div>
+    <GifWrapper>
+      <Gif src="/coding.gif" alt="A fun animation" />
+    </GifWrapper>
+
     <RightSide>
       <WelcomeText>WELCOME! 👋🏻</WelcomeText>
       <ImageWrapper>
