@@ -39,6 +39,7 @@ const Nav = styled.nav<{ isSticky: boolean }>`
   padding-top: 2rem;
   padding-bottom: 2rem;
   box-sizing: border-box;
+  z-index: 1000;
 `;
 
 const HamburgerButton = styled.button`

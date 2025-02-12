@@ -35,8 +35,6 @@ const Section = styled.section`
   scroll-snap-align: start;
   background-color: ${(props) => {
     switch (props.id) {
-      case "about":
-        return "lightcoral";
       case "portfolio":
         return "lightgreen";
       case "contact":
