@@ -1,21 +1,22 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin-top: 2rem;
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 10px;
+  grid-template-columns: 2fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 10%;
   @media (max-width: 1000px) {
     grid-template-columns: 1fr;
+    gap: 1%;
   }
 `;
 
 const RightSide = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 1000px) {
-    padding-top: 25%;
-  }
+  justify-content: center;
+  align-items: center;
 `;
 
 const WelcomeText = styled.h1`
@@ -41,7 +42,6 @@ const Image = styled.img`
   @media (max-width: 768px) {
     width: 80px;
     height: 80px;
-    margin-top: 0px;
   }
 `;
 
@@ -55,7 +55,12 @@ const GifWrapper = styled.div`
 
 const Gif = styled.img`
   width: 90%;
-  height: 90%;
+  object-fit: contain;
+
+  @media (max-height: 500px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const Text = styled.p`
@@ -68,16 +73,17 @@ const Contact = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  width: 100%;
   border-bottom: 1px solid #ffe4e4;
   border-top: 1px solid #ffe4e4;
+  @media (max-width: 768px), (max-height: 500px) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const Icon = styled.img`
   width: 30px;
   height: 30px;
-  @media (max-width: 768px) {
-    margin-bottom: 10px;
-  }
 `;
 
 export { Contact, Container, Gif, Icon, Image, ImageWrapper, RightSide, Text, WelcomeText, GifWrapper };

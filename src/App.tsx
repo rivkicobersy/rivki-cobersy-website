@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "../common";
 import { About, Contact, Home, Portfolio } from "./modules";
-import { PageContainer, Section } from "./styles";
+import { GlobalStyle, PageContainer, Section } from "./styles";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -40,6 +40,7 @@ const App = () => {
 
   return (
     <div>
+      <GlobalStyle />
       <NavBar
         navItems={[
           { name: "Home", path: "" },

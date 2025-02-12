@@ -1,4 +1,25 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(134, 134, 134); 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #121212; 
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color:rgb(134, 134, 134) #121212;
+  }
+`;
 
 const PageContainer = styled.div`
   padding-left: 10%;
@@ -24,6 +45,9 @@ const Section = styled.section`
         return "white";
     }
   }};
+  @media (max-width: 999px) and (max-height: 999px) {
+    height: 100%;
+  }
 `;
 
-export { PageContainer, Section };
+export { PageContainer, Section, GlobalStyle };
