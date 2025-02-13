@@ -4,14 +4,21 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: 50px;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const FlipCard = styled.div`
   background-color: transparent;
-  width: 350px; /* Default width */
-  height: 400px;
+  width: 40vh;
+  height: 50vh;
   border: 1px solid #f1f1f1;
   border-radius: 20px;
   perspective: 1000px;
@@ -24,9 +31,7 @@ const FlipCard = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 250px; /* Make the cards take up full width on small screens */
-    height: 200px; /* Adjust the height */
-    margin-bottom: 10px; /* Add space between cards */
+    margin-bottom: 20px;
   }
 `;
 
@@ -68,11 +73,14 @@ const Section = styled.div`
 `;
 
 const Image = styled.img`
-  width: 80%;
-  height: 80%;
-  padding: 1rem;
+  width: calc(100% - 2rem); /* Subtract padding from the width */
+  height: calc(100% - 2rem); /* Subtract padding from the height */
+  object-fit: cover;
+  border-radius: 20px;
+  padding: 1rem; /* Add padding inside the image */
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 const Text = styled.p`
@@ -80,4 +88,27 @@ const Text = styled.p`
   line-height: 1.5;
 `;
 
-export { Image, PageContainer, Section, Text, FlipCard, FlipCardInner, FlipCardBack, FlipCardFront };
+const Link = styled.a`
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+  position: relative;
+  transition: font-weight 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+`;
+
+export { Image, PageContainer, Section, Text, FlipCard, FlipCardInner, FlipCardBack, FlipCardFront, Link };
