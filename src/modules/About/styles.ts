@@ -7,6 +7,7 @@ const PageContainer = styled.div`
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
+  margin-bottom: 10rem;
 
   @media (max-width: 768px) {
     display: flex;
@@ -33,13 +34,16 @@ const FlipCard = styled.div`
   @media (max-width: 768px) {
     margin-bottom: 20px;
   }
+  @media (max-height: 768px) {
+    width: 40vw;
+    height: 50vw;
+  }
 `;
 
 const FlipCardInner = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 `;
@@ -65,6 +69,13 @@ const FlipCardBack = styled.div`
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
 `;
 
 const Section = styled.div`
@@ -73,11 +84,11 @@ const Section = styled.div`
 `;
 
 const Image = styled.img`
-  width: calc(100% - 2rem); /* Subtract padding from the width */
-  height: calc(100% - 2rem); /* Subtract padding from the height */
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
   object-fit: cover;
   border-radius: 20px;
-  padding: 1rem; /* Add padding inside the image */
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,4 +122,7 @@ const Link = styled.a`
   }
 `;
 
-export { Image, PageContainer, Section, Text, FlipCard, FlipCardInner, FlipCardBack, FlipCardFront, Link };
+const Li = styled.li`
+  padding: 1rem;
+`;
+export { FlipCard, FlipCardBack, FlipCardFront, FlipCardInner, Image, Li, Link, PageContainer, Section, Text };
