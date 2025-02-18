@@ -23,7 +23,6 @@ const NavBar: React.FC<NavBarProps> = ({ navItems, activeSection }) => {
       scrollToHome();
     } else {
       const section = document.getElementById(path);
-      console.log(section);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }

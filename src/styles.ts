@@ -21,19 +21,17 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const PageContainer = styled.div`
-  padding-left: 10%;
-  padding-right: 10%;
-`;
+const PageContainer = styled.div``;
 
 const Section = styled.section`
   height: ${(props) => {
     if (props.id === "carousel") {
-      return "30vh";
+      return "80vh";
     }
     return props.id === "" ? "calc(100vh - 280px)" : "100vh";
   }};
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "../common";
-import { About, Contact, Home, Portfolio } from "./modules";
+import { About, Carousel, Contact, Home, Portfolio } from "./modules";
 import { GlobalStyle, PageContainer, Section } from "./styles";
-import { MovingCarousel } from "./modules/About/Caresole";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -59,7 +58,7 @@ const App = () => {
           <About />
         </Section>
         <Section id="carousel">
-          <MovingCarousel />
+          <Carousel />
         </Section>
         <Section id="portfolio">
           <Portfolio />

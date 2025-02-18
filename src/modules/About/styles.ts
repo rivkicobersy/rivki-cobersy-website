@@ -7,7 +7,6 @@ const PageContainer = styled.div`
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
-  margin-bottom: 10rem;
 
   @media (max-width: 768px) {
     display: flex;
@@ -71,11 +70,9 @@ const FlipCardBack = styled.div`
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
-  text-align: center;
 `;
 
 const Section = styled.div`

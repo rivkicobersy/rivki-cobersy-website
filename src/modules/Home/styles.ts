@@ -6,6 +6,8 @@ const Container = styled.div`
   justify-items: center;
   align-items: center;
   gap: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
   @media (max-width: 1000px) {
     grid-template-columns: 1fr;
     gap: 1%;
