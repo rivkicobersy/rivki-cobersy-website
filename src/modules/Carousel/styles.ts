@@ -34,4 +34,23 @@ const CarouselItem = styled.div`
   color: #fff;
 `;
 
-export { CarouselItem, CarouselWrapper, Container, moveCarousel };
+const CarouselWrapperReverse = styled.div`
+  display: flex;
+  animation: ${moveCarousel} 14s linear infinite reverse;
+  margin-top: 1rem;
+`;
+
+const CarouselItemReverse = styled.div`
+  flex: 0 0 auto;
+  width: 200px;
+  height: 150px;
+  background-color: #ccc;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #fff;
+`;
+
+export { CarouselItem, CarouselWrapper, Container, moveCarousel, CarouselWrapperReverse, CarouselItemReverse };

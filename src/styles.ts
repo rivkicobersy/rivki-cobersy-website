@@ -26,7 +26,7 @@ const PageContainer = styled.div``;
 const Section = styled.section`
   height: ${(props) => {
     if (props.id === "carousel") {
-      return "80vh";
+      return "60vh";
     }
     return props.id === "" ? "calc(100vh - 280px)" : "100vh";
   }};
