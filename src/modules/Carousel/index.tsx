@@ -1,45 +1,15 @@
-// src/components/Carousel/Carousel.js
-import React from "react";
-import { CarouselContainer, CarouselWrapper, CarouselWrapperReverse, CarouselItem, Container } from "./styles";
+import { CarouselItem, CarouselWrapper, Container } from "./styles";
+
+const items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7"];
 
 const Carousel = () => {
   return (
     <Container>
-      {/* First carousel (moves left to right) */}
-      <CarouselContainer>
-        <CarouselWrapper>
-          {/* First set of items */}
-          <CarouselItem>Item 1</CarouselItem>
-          <CarouselItem>Item 2</CarouselItem>
-          <CarouselItem>Item 3</CarouselItem>
-          <CarouselItem>Item 4</CarouselItem>
-          <CarouselItem>Item 5</CarouselItem>
-          {/* Duplicate the items to create a seamless loop */}
-          <CarouselItem>Item 1</CarouselItem>
-          <CarouselItem>Item 2</CarouselItem>
-          <CarouselItem>Item 3</CarouselItem>
-          <CarouselItem>Item 4</CarouselItem>
-          <CarouselItem>Item 5</CarouselItem>
-        </CarouselWrapper>
-      </CarouselContainer>
-
-      {/* Second carousel (moves right to left) */}
-      <CarouselContainer>
-        <CarouselWrapperReverse>
-          {/* First set of items */}
-          <CarouselItem>Item 1</CarouselItem>
-          <CarouselItem>Item 2</CarouselItem>
-          <CarouselItem>Item 3</CarouselItem>
-          <CarouselItem>Item 4</CarouselItem>
-          <CarouselItem>Item 5</CarouselItem>
-          {/* Duplicate the items to create a seamless loop */}
-          <CarouselItem>Item 1</CarouselItem>
-          <CarouselItem>Item 2</CarouselItem>
-          <CarouselItem>Item 3</CarouselItem>
-          <CarouselItem>Item 4</CarouselItem>
-          <CarouselItem>Item 5</CarouselItem>
-        </CarouselWrapperReverse>
-      </CarouselContainer>
+      <CarouselWrapper>
+        {[...items, ...items].map((item, index) => (
+          <CarouselItem key={index}>{item}</CarouselItem>
+        ))}
+      </CarouselWrapper>
     </Container>
   );
 };
