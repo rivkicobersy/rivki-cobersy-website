@@ -1,7 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-
+  body {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -26,12 +30,13 @@ const PageContainer = styled.div``;
 const Section = styled.section`
   height: ${(props) => {
     if (props.id === "carousel") {
-      return "60vh";
+      return "80vh";
     }
     return props.id === "" ? "calc(100vh - 280px)" : "100vh";
   }};
   padding-top: 20px;
   padding-bottom: 20px;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
