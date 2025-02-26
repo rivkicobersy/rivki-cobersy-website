@@ -1,22 +1,25 @@
 import styled from "styled-components";
 
-const ImageWrapper = styled.div`
+const Footer = styled.footer`
+  bottom: 0;
+  left: 0;
   width: 100%;
-  margin-bottom: 2rem;
+  text-align: center;
+  background-color: #f1f1f1;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 `;
 
-const Image = styled.img`
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  float: left;
-  margin-top: 20px;
-  margin-right: 20px;
+const FooterText = styled.p`
+  color: #333;
+  font-size: 14px;
+  margin: 0;
 `;
 
-const Text = styled.p`
-  float: none;
-  line-height: 1.5;
+const ContentWrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
-export { Image, ImageWrapper, Text };
+export { Footer, FooterText, ContentWrapper };

@@ -32,6 +32,9 @@ const Section = styled.section`
     if (props.id === "carousel") {
       return "80vh";
     }
+    // if (props.id === "contact") {
+    //   return "55vh";
+    // }
     return props.id === "" ? "calc(100vh - 280px)" : "100vh";
   }};
   padding-top: 20px;
@@ -45,7 +48,7 @@ const Section = styled.section`
     switch (props.id) {
       case "portfolio":
         return "lightgreen";
-      case "contact":
+      case "carousel":
         return "lightyellow";
       default:
         return "white";

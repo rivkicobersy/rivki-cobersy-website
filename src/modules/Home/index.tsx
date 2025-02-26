@@ -1,3 +1,4 @@
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Contact, Container, Gif, GifWrapper, Icon, Image, ImageWrapper, RightSide, Text, WelcomeText } from "./styles";
 
 const Home = () => (
@@ -16,15 +17,21 @@ const Home = () => (
         </Text>
       </ImageWrapper>
       <Contact>
-        <a href="mailto:rachey917@gmail.com">
-          <Icon src="/email.jpeg" />
-        </a>
-        <a href="https://www.linkedin.com/in/rivkacobersy/" target="_blank" rel="noopener noreferrer">
-          <Icon src="/linkedin.jpeg" />
-        </a>
-        <a href="https://github.com/rivkicobersy/" target="_blank" rel="noopener noreferrer">
-          <Icon src="/github.jpeg" />
-        </a>
+        <Icon>
+          <a href="mailto:rachey917@gmail.com">
+            <FaEnvelope size={30} cursor="pointer" color="#c6605c" />
+          </a>
+        </Icon>
+        <Icon>
+          <a href="https://www.linkedin.com/in/rivkacobersy/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={30} cursor="pointer" color="#c6605c" />
+          </a>
+        </Icon>
+        <Icon>
+          <a href="https://github.com/rivkicobersy/" target="_blank" rel="noopener noreferrer">
+            <FaGithub size={30} cursor="pointer" color="#c6605c" />
+          </a>
+        </Icon>
       </Contact>
     </RightSide>
   </Container>

@@ -38,7 +38,7 @@ const CarouselItem = styled.div`
   flex: 0 0 auto;
   width: 350px;
   height: 150px;
-  background-color: #ccc;
+  background-color: #ffe4e4;
   margin-right: 20px;
   display: flex;
   justify-content: center;

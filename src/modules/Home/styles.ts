@@ -19,6 +19,7 @@ const RightSide = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80%;
 `;
 
 const WelcomeText = styled.h1`
@@ -83,7 +84,7 @@ const Contact = styled.div`
   }
 `;
 
-const Icon = styled.img`
+const Icon = styled.div`
   width: 30px;
   height: 30px;
 `;

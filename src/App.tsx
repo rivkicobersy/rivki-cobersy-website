@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "../common";
-import { About, Carousel, Contact, Home, Portfolio } from "./modules";
+import { About, Carousel, Contact, Footer, Home, Portfolio } from "./modules";
 import { GlobalStyle, PageContainer, Section } from "./styles";
 
 const App = () => {
@@ -57,9 +57,9 @@ const App = () => {
         <Section id="about">
           <About />
         </Section>
-        <Section id="carousel">
+        {/* <Section id="carousel">
           <Carousel />
-        </Section>
+        </Section> */}
         <Section id="portfolio">
           <Portfolio />
         </Section>
@@ -67,6 +67,7 @@ const App = () => {
           <Contact />
         </Section>
       </PageContainer>
+      <Footer />
     </div>
   );
 };
