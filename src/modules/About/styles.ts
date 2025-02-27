@@ -122,4 +122,9 @@ const Link = styled.a`
 const Li = styled.li`
   padding: 1rem;
 `;
-export { FlipCard, FlipCardBack, FlipCardFront, FlipCardInner, Image, Li, Link, PageContainer, Section, Text };
+
+const Header = styled.h1`
+  padding: 1rem;
+`;
+
+export { FlipCard, FlipCardBack, FlipCardFront, FlipCardInner, Image, Li, Link, PageContainer, Section, Text, Header };

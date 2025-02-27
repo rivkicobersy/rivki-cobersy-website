@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { NavBar } from "../common";
-import { About, Carousel, Contact, Footer, Home, Portfolio } from "./modules";
-import { GlobalStyle, PageContainer, Section } from "./styles";
+import { NavBar, useNotifications } from "../common";
+import { About, Contact, Footer, Home, Portfolio } from "./modules";
+import { GlobalStyle, PageContainer, Section, StyledAlert } from "./styles";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("");
-
+  const { inlineAlert } = useNotifications();
   const handleScroll = () => {
     const sections = document.querySelectorAll("section");
     let found = false;
@@ -37,9 +37,14 @@ const App = () => {
       window.history.pushState({}, "", `/${activeSection}`);
     }
   }, [activeSection]);
-
+  console.log(inlineAlert);
   return (
     <div>
+      {inlineAlert && (
+        <StyledAlert type={inlineAlert.type}>
+          <strong>{inlineAlert.title}</strong>: {inlineAlert.message}
+        </StyledAlert>
+      )}
       <GlobalStyle />
       <NavBar
         navItems={[

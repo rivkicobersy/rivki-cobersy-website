@@ -59,4 +59,31 @@ const Section = styled.section`
   }
 `;
 
-export { PageContainer, Section, GlobalStyle };
+const StyledAlert = styled.div<{ type: string }>`
+  margin: 10px;
+  font-size: 0.8rem;
+  background-color: ${({ type }) =>
+    type === "success" ? "#d4edda" : type === "error" ? "#f8d7da" : type === "info" ? "#d1ecf1" : "transparent"};
+  color: ${({ type }) =>
+    type === "success" ? "#155724" : type === "error" ? "#721c24" : type === "info" ? "#0c5460" : "black"};
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid
+    ${({ type }) =>
+      type === "success" ? "#92c89e" : type === "error" ? "#f1a8b2" : type === "info" ? "#a3d0db" : "transparent"};
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+`;
+
+export { PageContainer, Section, GlobalStyle, StyledAlert };

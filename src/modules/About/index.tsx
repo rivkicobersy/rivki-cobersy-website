@@ -1,8 +1,8 @@
-import { FlipCard, FlipCardBack, FlipCardFront, FlipCardInner, Image, Li, Link, PageContainer } from "./styles";
+import { FlipCard, FlipCardBack, FlipCardFront, FlipCardInner, Header, Image, Li, Link, PageContainer } from "./styles";
 
 const About = () => (
   <div>
-    <h1>Here's what I've been up to...</h1>
+    <Header>Here's what I've been up to...</Header>
     <PageContainer>
       <FlipCard>
         <FlipCardInner className="flip-card-inner">
@@ -45,7 +45,7 @@ const About = () => (
       <FlipCard>
         <FlipCardInner className="flip-card-inner">
           <FlipCardFront>
-            <Image src="trackmatic.jpeg" alt="Trackmatic" />
+            <Image src="trackmatic.png" alt="Trackmatic" />
           </FlipCardFront>
           <FlipCardBack>
             <h2>Trackmatic</h2>
