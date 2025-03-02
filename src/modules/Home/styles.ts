@@ -32,6 +32,7 @@ const WelcomeText = styled.h1`
 
 const ImageWrapper = styled.div`
   width: 100%;
+  padding: 1rem;
 `;
 
 const Image = styled.img`
@@ -89,4 +90,4 @@ const Icon = styled.div`
   height: 30px;
 `;
 
-export { Contact, Container, Gif, Icon, Image, ImageWrapper, RightSide, Text, WelcomeText, GifWrapper };
+export { Contact, Container, Gif, GifWrapper, Icon, Image, ImageWrapper, RightSide, Text, WelcomeText };

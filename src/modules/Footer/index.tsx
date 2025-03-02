@@ -25,9 +25,8 @@ const Footer = () => (
       </Contact>
     </Container>
     <FooterWrapper>
+      <FooterText>Copyright ©2025 Rivki Cobersy, all rights reserved.</FooterText>
       <FooterText>
-        &copy; Copyright ©️2025 RivkiCobersy, all rights reserved.
-        <br />
         This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
       </FooterText>
     </FooterWrapper>

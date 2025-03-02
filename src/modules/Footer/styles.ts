@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  background-color: #ffe4e4; /* Fallback color */
+  background-color: #ffe4e4;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
     linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%);
-  background-size: 20px 20px; /* Size of the texture */
+  background-size: 20px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
