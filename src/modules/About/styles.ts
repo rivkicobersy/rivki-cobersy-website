@@ -23,14 +23,10 @@ const FlipCard = styled.div`
   perspective: 1000px;
   position: relative;
   z-index: 1;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 
   &:hover .flip-card-inner {
     transform: rotateX(180deg);
-  }
-
-  &:hover {
     box-shadow: none;
   }
 
@@ -61,6 +57,7 @@ const FlipCardFront = styled.div`
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 `;
 
 const FlipCardBack = styled.div`
