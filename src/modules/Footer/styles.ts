@@ -43,7 +43,7 @@ const Contact = styled.div`
 const Icon = styled.div`
   padding: 3rem;
   @media (max-width: 768px), (max-height: 500px) {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 `;
 

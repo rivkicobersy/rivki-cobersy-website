@@ -37,7 +37,7 @@ const App = () => {
       window.history.pushState({}, "", `/${activeSection}`);
     }
   }, [activeSection]);
-  console.log(inlineAlert);
+
   return (
     <div>
       {inlineAlert && (

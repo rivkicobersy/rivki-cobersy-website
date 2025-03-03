@@ -2,7 +2,7 @@ import { FieldProps } from "formik";
 import React from "react";
 import styled from "styled-components";
 
-interface TextFormFieldProps extends FieldProps {
+interface TextFormAreaProps extends FieldProps {
   labelText: string;
   type?: string;
   backgroundColor?: string;
@@ -11,6 +11,7 @@ interface TextFormFieldProps extends FieldProps {
 const Container = styled.div`
   padding-right: 1.5rem;
   padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 `;
 
 const Label = styled.label<{ hasError: boolean }>`
@@ -19,18 +20,17 @@ const Label = styled.label<{ hasError: boolean }>`
   background: ${({ hasError }) => (hasError ? "red" : "#333")};
 `;
 
-const Input = styled.input<{ hasError: boolean; backgroundColor?: string }>`
+const TextArea = styled.textarea<{ hasError: boolean; backgroundColor?: string }>`
   width: 100%;
-  padding: 8px;
-  margin-bottom: 12px;
+  padding: 12px;
   font-size: 14px;
   border: none;
   border-radius: 5px;
   outline: none;
-  height: 2rem;
+  height: 50px;
+  resize: vertical;
+  background: ${({ backgroundColor }) => backgroundColor || "#ffe4e4"};
   color: #c6605c;
-  background: ${({ backgroundColor }) => backgroundColor || "#ccc"};
-
   &::placeholder {
     color: ${({ hasError }) => (hasError ? "red" : "#c6605c")};
   }
@@ -40,14 +40,7 @@ const Input = styled.input<{ hasError: boolean; backgroundColor?: string }>`
   }
 `;
 
-const TextFormField: React.FC<TextFormFieldProps> = ({
-  field,
-  form,
-  labelText,
-  type = "text",
-  backgroundColor,
-  ...props
-}) => {
+const TextFormArea: React.FC<TextFormAreaProps> = ({ field, form, labelText, backgroundColor, ...props }) => {
   const { touched, errors } = form;
   const errorText = touched[field.name] && errors[field.name];
 
@@ -58,12 +51,11 @@ const TextFormField: React.FC<TextFormFieldProps> = ({
       <Label htmlFor={field.name} hasError={!!errorMessage}>
         {labelText}
       </Label>
-      <Input
+      <TextArea
         {...field}
         {...props}
         id={field.name}
         name={field.name}
-        type={type}
         hasError={!!errorMessage}
         backgroundColor={backgroundColor}
       />
@@ -71,4 +63,4 @@ const TextFormField: React.FC<TextFormFieldProps> = ({
   );
 };
 
-export default TextFormField;
+export default TextFormArea;

@@ -19,20 +19,25 @@ const FlipCard = styled.div`
   background-color: transparent;
   width: 40vh;
   height: 50vh;
-  border: 1px solid #f1f1f1;
   border-radius: 20px;
   perspective: 1000px;
   position: relative;
   z-index: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 
   &:hover .flip-card-inner {
     transform: rotateX(180deg);
   }
 
+  &:hover {
+    box-shadow: none;
+  }
+
   @media (max-width: 768px) {
     margin-bottom: 20px;
   }
+
   @media (max-height: 768px) {
     width: 40vw;
     height: 50vw;
