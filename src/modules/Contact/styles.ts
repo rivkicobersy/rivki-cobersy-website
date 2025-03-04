@@ -28,6 +28,7 @@ const Container = styled.div`
 const Title = styled.h2`
   font-size: 2rem;
   padding: 0;
+  color: #c6605c;
 `;
 
 const FormWrapper = styled.form`
@@ -50,9 +51,6 @@ const StyledReCAPTCHA = styled(ReCAPTCHA)`
   width: 100%;
   max-width: 300px;
   height: auto;
-
-  
-  }
 `;
 
 export { ContentWrapper, Title, FormWrapper, Container, ReCAPTCHAWrapper, StyledReCAPTCHA };

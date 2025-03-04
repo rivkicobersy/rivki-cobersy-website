@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     display: block;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
   ::-webkit-scrollbar {
     width: 8px;
@@ -32,9 +33,6 @@ const Section = styled.section`
     if (props.id === "carousel") {
       return "80vh";
     }
-    // if (props.id === "contact") {
-    //   return "55vh";
-    // }
     return props.id === "" ? "calc(100vh - 280px)" : "100vh";
   }};
   padding-top: 20px;
@@ -44,16 +42,7 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-  background-color: ${(props) => {
-    switch (props.id) {
-      case "portfolio":
-        return "lightgreen";
-      case "carousel":
-        return "lightyellow";
-      default:
-        return "white";
-    }
-  }};
+
   @media (max-width: 999px) and (max-height: 999px) {
     height: 100%;
   }

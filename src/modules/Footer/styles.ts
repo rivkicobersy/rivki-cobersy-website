@@ -18,7 +18,7 @@ const FooterWrapper = styled.footer`
 `;
 
 const FooterText = styled.p`
-  color: #333;
+  color: #c6605c;
   font-size: 14px;
   margin: 0;
 `;

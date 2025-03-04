@@ -1,15 +1,89 @@
-import { Image, ImageWrapper, Text } from "./styles";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Card, Description, Image, SliderContainer, Title } from "./styles";
 
-const Portfolio = () => (
-  <div>
-    <ImageWrapper>
-      <Image src="/me.jpeg" alt="Profile pic" />
-      <Text>
-        I'm Rivki — the web developer and designer behind this website. Here you'll find plenty of creative web design
-        inspiration, coding tips, and development resources. I hope you enjoy exploring and building with me!
-      </Text>
-    </ImageWrapper>
-  </div>
-);
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+const exampleProjects: Project[] = [
+  {
+    id: 1,
+    title: "Personal Website",
+    description: "My Personal Website",
+    imageUrl: "/website.png",
+  },
+  {
+    id: 2,
+    title: "Recipe Finder",
+    description: "Create and view the best recipes",
+    imageUrl: "/recipes.jpeg",
+  },
+  {
+    id: 3,
+    title: "My Todos",
+    description: "Keep track of all your tasks in one place",
+    imageUrl: "/todo.jpeg",
+  },
+  {
+    id: 4,
+    title: "Movie Finder",
+    description: "Finally see why that actor looks familiar",
+    imageUrl: "/movies.jpeg",
+  },
+  {
+    id: 5,
+    title: "Taskify",
+    description: "Organise all of your tasks and projects",
+    imageUrl: "/tasks.jpeg",
+  },
+];
+
+const Portfolio = () => {
+  return (
+    <SliderContainer>
+      <Swiper
+        spaceBetween={30}
+        slidesPerView={3}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        modules={[Pagination, Autoplay]}
+        loop
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          720: {
+            slidesPerView: 2,
+          },
+          1000: {
+            slidesPerView: 3,
+          },
+        }}
+      >
+        {exampleProjects.map((project) => (
+          <SwiperSlide key={project.id}>
+            <Card>
+              <Title>{project.title}</Title>
+              <Image src={project.imageUrl} alt={project.title} />
+              <Description>{project.description}</Description>
+            </Card>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </SliderContainer>
+  );
+};
 
 export default Portfolio;

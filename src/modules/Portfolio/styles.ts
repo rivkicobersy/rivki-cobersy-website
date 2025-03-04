@@ -1,22 +1,45 @@
 import styled from "styled-components";
 
-const ImageWrapper = styled.div`
-  width: 100%;
-  margin-bottom: 2rem;
+const SliderContainer = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+`;
+
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background-color: rgba(252, 232, 232, 0.6);
+  border: 2px solid #c6605c;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  height: 400px;
+  overflow: hidden;
 `;
 
 const Image = styled.img`
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  float: left;
-  margin-top: 20px;
-  margin-right: 20px;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-const Text = styled.p`
-  float: none;
-  line-height: 1.5;
+const Title = styled.h3`
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #c6605c;
 `;
 
-export { Image, ImageWrapper, Text };
+const Description = styled.p`
+  font-size: 1rem;
+  color: #c6605c;
+`;
+
+export { Image, SliderContainer, Card, Title, Description };
