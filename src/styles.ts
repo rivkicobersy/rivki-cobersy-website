@@ -42,7 +42,11 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-
+  background: ${(props) => {
+    if (props.id === "o") {
+      return "#ffe4e4";
+    }
+  }};
   @media (max-width: 999px) and (max-height: 999px) {
     height: 100%;
   }

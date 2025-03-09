@@ -1,133 +1,42 @@
 import styled from "styled-components";
 
-const PageContainer = styled.div`
+const ContentWrapper = styled.div`
   display: flex;
+  height: 100vh;
+  width: 100%;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
 
   @media (max-width: 768px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
   }
 `;
 
-const FlipCard = styled.div`
-  background-color: transparent;
-  width: 40vh;
-  height: 50vh;
-  border-radius: 20px;
-  perspective: 1000px;
-  position: relative;
-  z-index: 1;
-  transition: box-shadow 0.3s ease;
+const Left = styled.div`
+  background-image: url("/desk.png");
+  background-size: cover;
+  height: 50%;
 
-  &:hover .flip-card-inner {
-    transform: rotateX(180deg);
-    box-shadow: none;
-  }
-
-  @media (max-width: 768px) {
-    margin-bottom: 20px;
-  }
-
-  @media (max-height: 768px) {
-    width: 40vw;
-    height: 50vw;
+  @media (min-width: 768px) {
+    width: 100%;
+    height: calc(100% + 10px);
   }
 `;
 
-const FlipCardInner = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-`;
-
-const FlipCardFront = styled.div`
-  background-color: #ffe4e4;
-  color: black;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-`;
-
-const FlipCardBack = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #ffe4e4;
-  color: black;
-  transform: rotateX(180deg);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 20px;
+const Right = styled.div`
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
-  overflow: hidden;
-`;
-
-const Section = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Image = styled.img`
-  width: calc(100% - 2rem);
-  height: calc(100% - 2rem);
-  object-fit: cover;
-  border-radius: 20px;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  color: white;
-`;
-
-const Text = styled.p`
-  float: none;
-  line-height: 1.5;
-`;
-
-const Link = styled.a`
-  text-decoration: none;
   color: black;
-  font-weight: normal;
-  position: relative;
-  transition: font-weight 0.3s ease;
+  height: 50%;
+  border: 10px solid;
+  border-image: linear-gradient(135deg, #e5d2c9, transparent) 1;
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: black;
-    transition: width 0.3s ease;
-  }
-
-  &:hover::after {
+  @media (min-width: 768px) {
+    height: calc(100% - 10px);
     width: 100%;
   }
 `;
 
-const Li = styled.li`
-  padding: 1rem;
-`;
-
-const Header = styled.h1`
-  padding: 1rem;
-`;
-
-export { FlipCard, FlipCardBack, FlipCardFront, FlipCardInner, Image, Li, Link, PageContainer, Section, Text, Header };
+export { Right, Left, ContentWrapper };

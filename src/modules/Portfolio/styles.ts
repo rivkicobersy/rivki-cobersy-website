@@ -15,8 +15,8 @@ const Card = styled.div`
   border: 2px solid #c6605c;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  height: 400px;
+  border-radius: 20px;
+  height: 500px;
   overflow: hidden;
 `;
 
