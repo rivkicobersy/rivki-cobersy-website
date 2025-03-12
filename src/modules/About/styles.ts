@@ -79,7 +79,7 @@ const Paragraph = styled.p`
     font-size: 15px;
     margin: 10px 0;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     font-size: 10px;
     margin: 10px 0;
   }
