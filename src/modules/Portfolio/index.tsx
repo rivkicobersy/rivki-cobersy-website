@@ -4,7 +4,7 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Card, Description, Image, SliderContainer, Title } from "./styles";
+import { Card, Description, Image, ImageContainer, SliderContainer, Title } from "./styles";
 
 const exampleProjects = [
   { id: 1, title: "Personal Website", description: "My Personal Website", imageUrl: "/website.png", home: true },
@@ -67,7 +67,9 @@ const Portfolio = () => {
                 >
                   <Card onClick={project.home ? handleClicktoHome : handleClick}>
                     <Title>{project.title}</Title>
-                    <Image src={project.imageUrl} alt={project.title} />
+                    <ImageContainer>
+                      <Image src={project.imageUrl} alt={project.title} />
+                    </ImageContainer>
                     <Description>{project.description}</Description>
                   </Card>
                 </motion.div>
