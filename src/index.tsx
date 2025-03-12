@@ -1,13 +1,17 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NotificationsProvider } from "../common/hooks/context";
 import App from "./App";
+import ErrorPage from "./modules/404";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <Router>
     <NotificationsProvider>
-      <App />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/error" element={<ErrorPage />} />
+      </Routes>
     </NotificationsProvider>
   </Router>
 );

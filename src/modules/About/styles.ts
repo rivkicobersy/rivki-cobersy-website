@@ -63,8 +63,12 @@ const Heading = styled.h1`
   color: #c6605c;
   margin-bottom: 20px;
   font-family: "Dancing Script", cursive;
-  animation: bounce 1s ease-in-out infinite;
+  animation: none; /* Default no animation */
   overflow-wrap: break-word;
+
+  &.bounce {
+    animation: bounce 1s ease-in-out 1; /* Trigger bounce animation only once */
+  }
 
   @media (max-width: 768px) {
     font-size: 6vw;

@@ -46,6 +46,11 @@ const exampleProjects: Project[] = [
 ];
 
 const Portfolio = () => {
+  const handleClick = () => {
+    // Open a new window (or tab) to display the error page
+    window.open("/error", "_blank"); // This will open the ErrorPage in a new tab
+  };
+
   return (
     <SliderContainer>
       <Swiper
@@ -74,7 +79,9 @@ const Portfolio = () => {
       >
         {exampleProjects.map((project) => (
           <SwiperSlide key={project.id}>
-            <Card>
+            <Card onClick={handleClick}>
+              {" "}
+              {/* Add onClick to Card */}
               <Title>{project.title}</Title>
               <Image src={project.imageUrl} alt={project.title} />
               <Description>{project.description}</Description>
