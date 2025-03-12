@@ -8,6 +8,10 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 340px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const FooterWrapper = styled.footer`
@@ -37,6 +41,10 @@ const Contact = styled.div`
   @media (max-width: 768px), (max-height: 500px) {
     margin-bottom: 2rem;
     padding: 0;
+  }
+  @media (max-width: 340px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 

@@ -21,14 +21,13 @@ const Card = styled.div`
 `;
 
 const Image = styled.img`
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 20px;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-width: 280px;
+  max-height: 280px;
+  margin: 0 auto;
+  display: block;
 `;
 
 const Title = styled.h3`

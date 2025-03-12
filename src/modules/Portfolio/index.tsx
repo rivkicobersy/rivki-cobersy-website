@@ -10,6 +10,7 @@ interface Project {
   title: string;
   description: string;
   imageUrl: string;
+  home?: boolean;
 }
 
 const exampleProjects: Project[] = [
@@ -18,6 +19,7 @@ const exampleProjects: Project[] = [
     title: "Personal Website",
     description: "My Personal Website",
     imageUrl: "/website.png",
+    home: true,
   },
   {
     id: 2,
@@ -47,8 +49,12 @@ const exampleProjects: Project[] = [
 
 const Portfolio = () => {
   const handleClick = () => {
-    // Open a new window (or tab) to display the error page
-    window.open("/error", "_blank"); // This will open the ErrorPage in a new tab
+    window.open("/error", "_blank");
+  };
+
+  const handleClicktoHome = () => {
+    window.history.pushState({}, "", "/");
+    window.scroll({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -79,9 +85,7 @@ const Portfolio = () => {
       >
         {exampleProjects.map((project) => (
           <SwiperSlide key={project.id}>
-            <Card onClick={handleClick}>
-              {" "}
-              {/* Add onClick to Card */}
+            <Card onClick={project.home ? handleClicktoHome : handleClick}>
               <Title>{project.title}</Title>
               <Image src={project.imageUrl} alt={project.title} />
               <Description>{project.description}</Description>
