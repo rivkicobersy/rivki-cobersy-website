@@ -10,6 +10,7 @@ const ContentWrapper = styled.div`
   min-height: 75%;
   justify-content: center;
   padding: 20px;
+  margin-top: 40px;
 `;
 
 const Container = styled.div`

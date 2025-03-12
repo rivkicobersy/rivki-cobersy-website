@@ -11,6 +11,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/error" element={<ErrorPage />} />
+        <Route path="*" element={<App />} />
       </Routes>
     </NotificationsProvider>
   </Router>
