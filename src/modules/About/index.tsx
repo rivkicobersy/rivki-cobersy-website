@@ -22,7 +22,11 @@ const About = () => {
           <Paragraph>
             I'm a Summa Cum Laude graduate with a Bachelor of Arts in{" "}
             <EmphasizedText>Computer Information Science</EmphasizedText> and a minor in{" "}
-            <EmphasizedText>Health Science at</EmphasizedText> <StrongText> Touro College.</StrongText>
+            <EmphasizedText>Health Science at</EmphasizedText>{" "}
+            <StrongText href="https://www.touro.edu/" target="_blank" rel="noopener noreferrer">
+              {" "}
+              Touro College.
+            </StrongText>
           </Paragraph>
         </motion.div>
 
@@ -32,8 +36,11 @@ const About = () => {
           transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.4 }}
         >
           <Paragraph>
-            I completed a super fun Full Stack Bootcamp at <StrongText>Actualize</StrongText> where I learned Ruby on
-            Rails and React JavaScript.
+            I completed a super fun Full Stack Bootcamp at{" "}
+            <StrongText href="https://anyonecanlearntocode.com/" target="_blank" rel="noopener noreferrer">
+              Actualize
+            </StrongText>{" "}
+            where I learned Ruby on Rails and React JavaScript.
           </Paragraph>
         </motion.div>
 
@@ -43,8 +50,11 @@ const About = () => {
           transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.5 }}
         >
           <Paragraph>
-            Since 2023, I've been working at <StrongText>Trackmatic</StrongText>, where I get to work on both the
-            backend and frontend!
+            Since 2023, I've been working at{" "}
+            <StrongText href="https://trackmatic.co.za/" target="_blank" rel="noopener noreferrer">
+              Trackmatic
+            </StrongText>
+            , where I get to work on both the backend and frontend!
           </Paragraph>
         </motion.div>
 

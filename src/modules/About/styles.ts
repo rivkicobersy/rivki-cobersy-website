@@ -85,8 +85,10 @@ const Paragraph = styled.p`
   }
 `;
 
-const StrongText = styled.strong`
+const StrongText = styled.a`
   color: #c6605c;
+  font-weight: bold;
+  text-decoration: none;
 `;
 
 const EmphasizedText = styled.em`
