@@ -62,9 +62,6 @@ const App = () => {
         <Section id="about">
           <About />
         </Section>
-        {/* <Section id="carousel">
-          <Carousel />
-        </Section> */}
         <Section id="portfolio">
           <Portfolio />
         </Section>
