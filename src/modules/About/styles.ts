@@ -47,15 +47,6 @@ const RightContainer = styled.div`
   @media (max-width: 768px) {
     padding: 15px;
   }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `;
 
 const Heading = styled.h1`
@@ -72,16 +63,6 @@ const Heading = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 6vw;
-  }
-
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
   }
 `;
 
