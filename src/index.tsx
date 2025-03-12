@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { NotificationsProvider } from "../common/hooks/context";
 import App from "./App";
 import ErrorPage from "./modules/404";
