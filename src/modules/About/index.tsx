@@ -73,9 +73,11 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.7 }}
         >
-          <StrongText href="/resume.pdf" download>
-            Download My Resume
-          </StrongText>
+          <Paragraph>
+            <StrongText href="/resume.pdf" download>
+              Download My Resume
+            </StrongText>
+          </Paragraph>
         </motion.div>
       </RightContainer>
     </ContentWrapper>
