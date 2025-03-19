@@ -74,7 +74,7 @@ const About = () => {
           transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.7 }}
         >
           <Paragraph>
-            <StrongText href="/resume.pdf" download>
+            <StrongText href="/resume.pdf" download="Rivki Cobersy Resume.pdf">
               Download My Resume
             </StrongText>
           </Paragraph>
