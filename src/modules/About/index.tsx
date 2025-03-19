@@ -68,6 +68,15 @@ const About = () => {
             I'm excited to continue learning and growing in the tech industry!
           </Paragraph>
         </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.7 }}
+        >
+          <StrongText href="/resume.pdf" download>
+            Download My Resume
+          </StrongText>
+        </motion.div>
       </RightContainer>
     </ContentWrapper>
   );

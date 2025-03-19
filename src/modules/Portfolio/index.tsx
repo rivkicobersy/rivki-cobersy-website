@@ -8,15 +8,25 @@ import { Card, Description, Image, ImageContainer, SliderContainer, Title } from
 
 const exampleProjects = [
   { id: 1, title: "Personal Website", description: "My Personal Website", imageUrl: "/website.png", home: true },
-  { id: 2, title: "Recipe Finder", description: "Create and view the best recipes", imageUrl: "/recipes.jpeg" },
+  {
+    id: 2,
+    title: "Snakie",
+    description: "Snake Game",
+    imageUrl: "/snake.png",
+    link: "https://snakie-game.netlify.app/",
+  },
   { id: 3, title: "My Todos", description: "Keep track of all your tasks in one place", imageUrl: "/todo.jpeg" },
   { id: 4, title: "Movie Finder", description: "Finally see why that actor looks familiar", imageUrl: "/movies.jpeg" },
   { id: 5, title: "Taskify", description: "Organise all of your tasks and projects", imageUrl: "/tasks.jpeg" },
 ];
 
 const Portfolio = () => {
-  const handleClick = () => {
-    window.open("/error", "_blank");
+  const handleClick = (link?: string) => {
+    if (link) {
+      window.open(link, "_blank");
+    } else {
+      window.open("/error", "_blank");
+    }
   };
 
   const handleClicktoHome = () => {
@@ -65,7 +75,9 @@ const Portfolio = () => {
                     damping: 20,
                   }}
                 >
-                  <Card onClick={project.home ? handleClicktoHome : handleClick}>
+                  <Card
+                    onClick={project.title === "Personal Website" ? handleClicktoHome : () => handleClick(project.link)}
+                  >
                     <Title>{project.title}</Title>
                     <ImageContainer>
                       <Image src={project.imageUrl} alt={project.title} />
