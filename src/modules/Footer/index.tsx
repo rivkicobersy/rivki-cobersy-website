@@ -14,7 +14,7 @@ const Footer = () => (
           transition={{ type: "spring", stiffness: 200, damping: 25 }}
         >
           <Icon>
-            <a href="mailto:rachey917@gmail.com">
+            <a href="mailto:test@gmail.com">
               <FaEnvelope size={30} cursor="pointer" color="#c6605c" />
             </a>
           </Icon>

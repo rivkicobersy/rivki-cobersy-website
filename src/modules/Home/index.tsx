@@ -24,7 +24,6 @@ const Home = () => (
       </motion.div>
 
       <ImageWrapper>
-        <Image src="/me.jpeg" alt="Profile pic" />
         <Text>
           I'm Rivki — the web developer and designer behind this website. Here you'll find plenty of creative web design
           inspiration, coding tips, and development resources. I hope you enjoy exploring and building with me!
@@ -39,7 +38,7 @@ const Home = () => (
           transition={{ type: "spring", stiffness: 200, damping: 25, delay: 0.5 }}
         >
           <Icon>
-            <a href="mailto:rachey917@gmail.com">
+            <a href="mailto:test@gmail.com">
               <FaEnvelope size={30} cursor="pointer" color="#c6605c" />
             </a>
           </Icon>
