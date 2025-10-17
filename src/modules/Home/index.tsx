@@ -1,5 +1,5 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
-import { Contact, Container, Gif, GifWrapper, Icon, Image, ImageWrapper, RightSide, Text, WelcomeText } from "./styles";
+import { Contact, Container, Gif, GifWrapper, Icon, ImageWrapper, RightSide, Text, WelcomeText } from "./styles";
 import { motion } from "motion/react";
 
 const Home = () => (
